@@ -41,7 +41,7 @@ public class GameNetworkManager : NetworkManager
 		}
 		else if (msg.username == "cracker" && msg.password == "password2")
 		{
-			conn.authenticationData = "gay";
+			conn.authenticationData = "jim";
 			response.success = true;
 		}
 

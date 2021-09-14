@@ -23,14 +23,13 @@ public class Player : NetworkBehaviour
 
 	public override void OnStartLocalPlayer()
 	{
-		Debug.Log("Hooked up camera to local player");
 		Camera.main.transform.parent = transform;
 		Camera.main.transform.position += new Vector3(0, 0, -10f);
 	}
 
 	private void Update()
 	{
-		if (!isLocalPlayer && !hasAuthority)
+		if (!isLocalPlayer)
 			return;
 
 		Vector3 velocity = Vector2.zero;
