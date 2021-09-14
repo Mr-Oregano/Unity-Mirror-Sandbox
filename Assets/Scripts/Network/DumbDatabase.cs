@@ -6,27 +6,17 @@ public class DumbDatabase
 {
 	private static Dictionary<string, PlayerInfo> s_Users = new Dictionary<string, PlayerInfo>()
 	{
-		{ "gay", new PlayerInfo{ name = "cheese", color = Color.green } },
-		{ "jim", new PlayerInfo{ name = "cracker", color = Color.red } }
+		{ "gay", new PlayerInfo{ name = "cheese", color = Color.yellow } },
+		{ "sam", new PlayerInfo{ name = "grapes", color = Color.magenta } },
+		{ "tam", new PlayerInfo{ name = "salt", color = Color.white } },
+		{ "jim", new PlayerInfo{ name = "salad", color = Color.green } }
 	};
 
-	public static UserInfoResponse GetPlayerInfo(string id)
+	public static bool TryGetPlayerInfo(string id, out PlayerInfo info)
 	{
-		UserInfoResponse response = new UserInfoResponse();
-
-		PlayerInfo info;
 		if (!s_Users.TryGetValue(id, out info))
-			return response;
+			return false;
 
-		response.info = info;
-		response.success = true;
-		return response;
+		return true;
 	}
-
-	public class UserInfoResponse
-	{
-		public bool success;
-		public PlayerInfo info;
-	}
-
 }

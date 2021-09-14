@@ -4,21 +4,16 @@ using Mirror;
 
 public class Player : NetworkBehaviour
 {
+	[SyncVar]
+	public PlayerInfo m_PlayerInitInfo;
+
 	[SerializeField]
 	private float m_Speed = 5f;
 
-	[Server]
-	public void CreateOnServer(PlayerInfo info)
+	private void Start()
 	{
-		Debug.Log(info.name + "'s player object created");
-		GetComponent<MeshRenderer>().materials[0].color = info.color;
-	}
-
-	[ClientRpc]
-	public void CreateRPC(PlayerInfo info)
-	{
-		Debug.Log(info.name + "'s player object created");
-		GetComponent<MeshRenderer>().materials[0].color = info.color;
+		Debug.Log(m_PlayerInitInfo.name + "'s player object created");
+		GetComponent<MeshRenderer>().materials[0].color = m_PlayerInitInfo.color;
 	}
 
 	public override void OnStartLocalPlayer()
