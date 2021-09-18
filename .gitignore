@@ -73,9 +73,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-/[Aa]ssets/Mirror/*
-/[Aa]ssets/Mirror.meta
-
 # Misc
 /[Aa]ssets/[Pp]arrel[Ss]ync/
 /[Aa]ssets/[Pp]arrel[Ss]ync.meta
